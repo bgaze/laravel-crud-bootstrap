@@ -25,8 +25,8 @@ class ServiceProvider extends Base {
      */
     public function register() {
         // Register theme class.
-        $this->app->singleton(Crud::name(), function ($app) {
-            return new Crud($app->make('Illuminate\Filesystem\Filesystem'));
+        $this->app->bind(Crud::name(), function ($app, $parameters) {
+            return new Crud($app->make('Illuminate\Filesystem\Filesystem'), $parameters[0]);
         });
     }
 

@@ -2,7 +2,7 @@
     "name": "bgaze/laravel-crud-bootstrap4",
     "description": "A Bootstrap 4 theme for bgaze/laravel-crud",
     "require": {
-        "bgaze/crud": "dev-master"
+        "realripley00/bootstrap-4-form": "~1"
     },
     "license": "MIT",
     "authors": [

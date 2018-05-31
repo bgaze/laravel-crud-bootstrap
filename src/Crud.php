@@ -13,13 +13,6 @@ use Bgaze\CrudThemes\Bootstrap4\Field;
 class Crud extends Base {
 
     /**
-     * The name of the field class to use.
-     * 
-     * @var type 
-     */
-    static protected $fieldClass = Field::class;
-
-    /**
      * The unique name of the CRUD theme.
      * 
      * It is used to register Theme's singleton.
@@ -28,6 +21,13 @@ class Crud extends Base {
      */
     static public function name() {
         return 'crud-bootstrap4';
+    }
+
+    /**
+     * TODO
+     */
+    protected function instantiateContent() {
+        return new Content($this);
     }
 
     /**
