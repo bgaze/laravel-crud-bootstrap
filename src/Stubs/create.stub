@@ -1,0 +1,22 @@
+@extends('ViewsLayout')
+
+@section('title', 'ModelFullName - Create')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Create a new ModelFullName</h1>
+
+            <p>
+                <a href="{{ route('PluralsKebabDot.index') }}" class="btn btn-primary">Back to PluralFullName</a>
+            </p>
+
+            {!! BootForm::open(['model' => $ModelCamel, 'route' => 'PluralsKebabDot.store']) !!}
+#CONTENT
+            {!! BootForm::submit('Save') !!}
+            {!! BootForm::close() !!}
+        </div>
+    </div>
+</div>
+@endsection

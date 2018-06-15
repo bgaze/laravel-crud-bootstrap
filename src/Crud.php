@@ -1,53 +1,54 @@
 <?php
 
-namespace Bgaze\CrudThemes\Bootstrap4;
+namespace Bgaze\BootstrapCrudTheme;
 
 use Bgaze\Crud\Theme\Crud as Base;
-use Bgaze\CrudThemes\Bootstrap4\Field;
+use Bgaze\BootstrapCrudTheme\Builders;
 
 /**
- * The core class of the theme
+ * Description of Crud
  *
- * @author bgaze <benjamin@bgaze.fr>
+ * @author bgaze
  */
 class Crud extends Base {
 
     /**
      * The unique name of the CRUD theme.
      * 
-     * It is used to register Theme's singleton.
-     * 
      * @return string
      */
     static public function name() {
-        return 'crud-bootstrap4';
+        return 'bootstrap';
     }
 
     /**
-     * TODO
+     * The stubs availables in the CRUD theme.
+     * 
+     * @return array Name as key, absolute path as value.
      */
-    protected function instantiateContent() {
-        return new Content($this);
+    static public function stubs() {
+        return array_merge(parent::stubs(), [
+            'partials.index-head' => __DIR__ . '/Stubs/partials/index-head.stub',
+            'partials.index-body' => __DIR__ . '/Stubs/partials/index-body.stub',
+            'partials.show-group' => __DIR__ . '/Stubs/partials/show-group.stub',
+            'partials.form-group' => __DIR__ . '/Stubs/partials/form-group.stub',
+            'views.index' => __DIR__ . '/Stubs/index.stub',
+            'views.show' => __DIR__ . '/Stubs/show.stub',
+            'views.create' => __DIR__ . '/Stubs/create.stub',
+            'views.edit' => __DIR__ . '/Stubs/edit.stub',
+        ]);
     }
 
     /**
-     * Get a stub file relative to Theme's dir and return it's content.
+     * The builders availables in the CRUD theme.
      * 
-     * Uses a dotted syntax, exemple :
-     * 
-     * 'my-parent-dir.my-stub' => 'theme-root-directory/stubs/my-parent-dir/my-stub.stub'
-     * 
-     * @param string $name The name of the stub
-     * @return string
+     * @return array Name as key, full class name as value.
      */
-    public function stub($name) {
-        $stub = $this->stubInDir(__DIR__ . '/stubs', $name);
-
-        if (empty($stub)) {
-            return parent::stub($name);
-        }
-
-        return $stub;
+    static public function builders() {
+        return array_merge(parent::builders(), [
+            'create-view' => Builders\CreateView::class,
+            'edit-view' => Builders\EditView::class,
+        ]);
     }
 
 }

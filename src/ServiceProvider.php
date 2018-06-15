@@ -1,11 +1,19 @@
 <?php
 
-namespace Bgaze\CrudThemes\Bootstrap4;
+namespace Bgaze\BootstrapCrudTheme;
 
 use Illuminate\Support\ServiceProvider as Base;
-use Bgaze\CrudThemes\Bootstrap4\Crud;
+use Bgaze\Crud\Support\ThemeProviderTrait;
+use Bgaze\BootstrapCrudTheme\Crud;
 
+/**
+ * The package service provider
+ *
+ * @author bgaze <benjamin@bgaze.fr>
+ */
 class ServiceProvider extends Base {
+
+    use ThemeProviderTrait;
 
     /**
      * Bootstrap the application services.
@@ -13,21 +21,8 @@ class ServiceProvider extends Base {
      * @return void
      */
     public function boot() {
-        // Register & publish theme views.
-        $this->loadViewsFrom(__DIR__ . '/views', Crud::views());
-        $this->publishes([__DIR__ . '/views' => resource_path('views/vendor/' . Crud::views())]);
-    }
-
-    /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register() {
-        // Register theme class.
-        $this->app->bind(Crud::name(), function ($app, $parameters) {
-            return new Crud($app->make('Illuminate\Filesystem\Filesystem'), $parameters[0]);
-        });
+        // Register & publish theme.
+        $this->registerTheme(Crud::class, 'Generate a CRUD using Bootstrap 4 theme', __DIR__ . '/Views');
     }
 
 }
