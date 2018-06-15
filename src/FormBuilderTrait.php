@@ -29,6 +29,8 @@ trait FormBuilderTrait {
                 }
                 $choices = array_combine($choices, $choices);
                 return sprintf("BootForm::select('FieldName', 'FieldLabel', %s)", $this->compileArrayForPhp($choices, true));
+            case 'text':
+                return "BootForm::textarea('FieldName', 'FieldLabel')";
             default:
                 return "BootForm::text('FieldName', 'FieldLabel')";
         }
