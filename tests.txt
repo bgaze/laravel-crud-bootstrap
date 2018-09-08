@@ -3,7 +3,7 @@ clear \
 && git clean -fd \
 && php artisan cr:b Article -n \
 -c "string title" \
--c "enum category foo bar foobar -i" \
+-c "enum status online refused pending -i" \
 -c "text body -n" \
 -c "integer views -u -d 0" \
 && php artisan mi:fr \
