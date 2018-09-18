@@ -22,7 +22,7 @@ class ServiceProvider extends Base {
      */
     public function boot() {
         // Register & publish theme.
-        $this->registerTheme(ClassicTheme::class, 'Generate a CRUD using Bootstrap 4 theme', __DIR__ . '/Classic/Views');
+        $this->registerTheme(ClassicTheme::class, 'Generate a classic CRUD using Bootstrap 4 theme', __DIR__ . '/Classic/Views');
     }
 
 }
