@@ -1,10 +1,10 @@
 <?php
 
-namespace Bgaze\BootstrapCrudTheme;
+namespace Bgaze\Crud\Themes\Bootstrap;
 
 use Illuminate\Support\ServiceProvider as Base;
 use Bgaze\Crud\Support\ThemeProviderTrait;
-use Bgaze\BootstrapCrudTheme\Crud;
+use Bgaze\Crud\Themes\Bootstrap\Classic\Crud as ClassicTheme;
 
 /**
  * The package service provider
@@ -22,7 +22,7 @@ class ServiceProvider extends Base {
      */
     public function boot() {
         // Register & publish theme.
-        $this->registerTheme(Crud::class, 'Generate a CRUD using Bootstrap 4 theme', __DIR__ . '/Views');
+        $this->registerTheme(ClassicTheme::class, 'Generate a CRUD using Bootstrap 4 theme', __DIR__ . '/Classic/Views');
     }
 
 }

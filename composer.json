@@ -14,13 +14,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bgaze\\BootstrapCrudTheme\\ServiceProvider"
+                "Bgaze\\Crud\\Themes\\Bootstrap\\ServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Bgaze\\BootstrapCrudTheme\\": "src"
+            "Bgaze\\Crud\\Themes\\Bootstrap\\": "src"
         }
     }
 }

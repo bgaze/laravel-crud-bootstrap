@@ -1,23 +1,15 @@
-clear \
-&& git reset --hard \
-&& git clean -fd \
-&& php artisan cr:b Article -n \
--c "string title" \
--c "enum status online refused pending -i" \
--c "text body -n" \
--c "integer views -u -d 0" \
-&& php artisan mi:fr \
-&& php artisan db:seed --class=ArticlesTableSeeder 
+# CLASSIC
 
 clear \
 && git reset --hard \
 && git clean -fd \
-&& php artisan cr:b Article -n \
+&& php artisan crud:bootstrap:classic Article -n \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
--c "integer views -u -d 0" \
-&& php artisan cr:b Article/Comment -n \
+-c "unsignedInteger views -d 0" \
+-c "boolean active -d 1" \
+&& php artisan crud:default:classic Article/Comment -n \
 -c "string pseudo" \
 -c "dateTime date -u" \
 -c "text comment" \

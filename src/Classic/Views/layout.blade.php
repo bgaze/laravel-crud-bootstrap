@@ -1,4 +1,4 @@
-@extends('crud-default::layout')
+@extends('crud-default-classic::layout')
 
 @section('metas')
     <meta charset="utf-8">

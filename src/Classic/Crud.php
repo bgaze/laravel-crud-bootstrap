@@ -1,14 +1,14 @@
 <?php
 
-namespace Bgaze\BootstrapCrudTheme;
+namespace Bgaze\Crud\Themes\Bootstrap\Classic;
 
-use Bgaze\Crud\Theme\Crud as Base;
-use Bgaze\BootstrapCrudTheme\Builders;
+use Bgaze\Crud\Themes\Classic\Crud as Base;
+use Bgaze\Crud\Themes\Bootstrap\Classic\Builders;
 
 /**
- * Description of Crud
+ * The core class of the theme
  *
- * @author bgaze
+ * @author bgaze <benjamin@bgaze.fr>
  */
 class Crud extends Base {
 
@@ -18,7 +18,7 @@ class Crud extends Base {
      * @return string
      */
     static public function name() {
-        return 'bootstrap';
+        return 'bootstrap:classic';
     }
 
     /**
@@ -32,10 +32,10 @@ class Crud extends Base {
             'partials.index-body' => __DIR__ . '/Stubs/partials/index-body.stub',
             'partials.show-group' => __DIR__ . '/Stubs/partials/show-group.stub',
             'partials.form-group' => __DIR__ . '/Stubs/partials/form-group.stub',
-            'views.index' => __DIR__ . '/Stubs/index.stub',
-            'views.show' => __DIR__ . '/Stubs/show.stub',
-            'views.create' => __DIR__ . '/Stubs/create.stub',
-            'views.edit' => __DIR__ . '/Stubs/edit.stub',
+            'views.index' => __DIR__ . '/Stubs/index-view.stub',
+            'views.show' => __DIR__ . '/Stubs/show-view.stub',
+            'views.create' => __DIR__ . '/Stubs/create-view.stub',
+            'views.edit' => __DIR__ . '/Stubs/edit-view.stub',
         ]);
     }
 
