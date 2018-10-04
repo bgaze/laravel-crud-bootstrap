@@ -12,7 +12,7 @@
 
 #CONTENT
 
-            {!! BootForm::open(['model' => $ModelCamel, 'route' => ['PluralsKebabDot.destroy', $ModelCamel->id], 'method' => 'delete']) !!}
+            {!! BootForm::open(['model' => $ModelCamel, 'route' => ['PluralsKebabDot.destroy', $ModelCamel->id], 'method' => 'delete', 'onsubmit' => 'return confirm(\'Do you really want to delete ModelFullName #' . $ModelCamel->id . '?\');']) !!}
                 <a href="{{ route('PluralsKebabDot.edit', ['ModelCamel' => $ModelCamel->id]) }}" class="btn btn-primary btn-sm">Edit</a>
                 <input type="submit" value="Delete" class="btn btn-danger btn-sm">
             {!! BootForm::close() !!}

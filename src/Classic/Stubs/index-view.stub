@@ -35,7 +35,7 @@
                                 <td>{{ $ModelCamel->id }}</td>
                                 #TBODY
                                 <td class="text-right">
-                                    {!! BootForm::open(['model' => $ModelCamel, 'route' => ['PluralsKebabDot.destroy', $ModelCamel->id], 'method' => 'delete']) !!}
+                                    {!! BootForm::open(['model' => $ModelCamel, 'route' => ['PluralsKebabDot.destroy', $ModelCamel->id], 'method' => 'delete', 'onsubmit' => 'return confirm(\'Do you really want to delete ModelFullName #' . $ModelCamel->id . '?\');']) !!}
                                         <div class="btn-group" role="group" aria-label="ModelStudly controls">
                                             <a href="{{ route('PluralsKebabDot.show', ['ModelCamel' => $ModelCamel->id]) }}" class="btn btn-primary btn-sm">Show</a>
                                             <a href="{{ route('PluralsKebabDot.edit', ['ModelCamel' => $ModelCamel->id]) }}" class="btn btn-primary btn-sm">Edit</a>
