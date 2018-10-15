@@ -22,6 +22,17 @@ class Crud extends Base {
     }
 
     /**
+     * The Theme base layout.
+     * 
+     * The default layout to extend in views.
+     * 
+     * @return string
+     */
+    static public function layout() {
+        return static::views() . '::layout-cdn';
+    }
+
+    /**
      * The stubs availables in the CRUD theme.
      * 
      * @return array Name as key, absolute path as value.
