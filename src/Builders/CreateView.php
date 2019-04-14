@@ -1,6 +1,6 @@
 <?php
 
-namespace Bgaze\Crud\Themes\Bootstrap\Classic\Builders;
+namespace Bgaze\Crud\Themes\Bootstrap\Builders;
 
 use Bgaze\Crud\Themes\Classic\Builders\CreateView as Base;
 use Bgaze\Crud\Core\Field;

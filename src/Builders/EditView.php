@@ -1,8 +1,8 @@
 <?php
 
-namespace Bgaze\Crud\Themes\Bootstrap\Classic\Builders;
+namespace Bgaze\Crud\Themes\Bootstrap\Builders;
 
-use Bgaze\Crud\Themes\Bootstrap\Classic\Builders\CreateView;
+use Bgaze\Crud\Themes\Bootstrap\Builders\CreateView;
 
 /**
  * The Edit view builder

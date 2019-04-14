@@ -1,9 +1,9 @@
 <?php
 
-namespace Bgaze\Crud\Themes\Bootstrap\Classic;
+namespace Bgaze\Crud\Themes\Bootstrap;
 
 use Bgaze\Crud\Themes\Classic\Crud as Base;
-use Bgaze\Crud\Themes\Bootstrap\Classic\Builders;
+use Bgaze\Crud\Themes\Bootstrap\Builders;
 
 /**
  * The core class of the theme
