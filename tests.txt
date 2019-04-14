@@ -1,9 +1,57 @@
 # CLASSIC
 
+## Mix
+
 clear \
 && git reset --hard \
 && git clean -fd \
 && php artisan crud:bootstrap:classic Article -n \
+-l "crud-bootstrap-classic::layout-mix" \
+-c "string title" \
+-c "enum category foo bar foobar -i" \
+-c "text body -n" \
+-c "unsignedInteger views -d 0" \
+-c "boolean active -d 1" \
+&& php artisan crud:bootstrap:classic Article/Comment -n \
+-l "crud-bootstrap-classic::layout-mix" \
+-c "string pseudo" \
+-c "dateTime date -u" \
+-c "text comment" \
+-c "enum humor happy unhappy -n" \
+-c "float note 2 1 -n" \
+&& php artisan mi:fr \
+&& php artisan db:seed --class=ArticlesTableSeeder \
+&& php artisan db:seed --class=ArticleCommentsTableSeeder
+
+## CDN
+
+clear \
+&& git reset --hard \
+&& git clean -fd \
+&& php artisan crud:bootstrap:classic Article -n \
+-l "crud-bootstrap-classic::layout-cdn" \
+-c "string title" \
+-c "enum category foo bar foobar -i" \
+-c "text body -n" \
+-c "unsignedInteger views -d 0" \
+-c "boolean active -d 1" \
+&& php artisan crud:bootstrap:classic Article/Comment -n \
+-l "crud-bootstrap-classic::layout-cdn" \
+-c "string pseudo" \
+-c "dateTime date -u" \
+-c "text comment" \
+-c "enum humor happy unhappy -n" \
+-c "float note 2 1 -n" \
+&& php artisan mi:fr \
+&& php artisan db:seed --class=ArticlesTableSeeder \
+&& php artisan db:seed --class=ArticleCommentsTableSeeder
+
+# VUE
+
+clear \
+&& git reset --hard \
+&& git clean -fd \
+&& php artisan crud:bootstrap:vue Article -n \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
@@ -17,4 +65,5 @@ clear \
 -c "float note 2 1 -n" \
 && php artisan mi:fr \
 && php artisan db:seed --class=ArticlesTableSeeder \
-&& php artisan db:seed --class=ArticleCommentsTableSeeder
+&& php artisan db:seed --class=ArticleCommentsTableSeeder \
+&& npm run dev

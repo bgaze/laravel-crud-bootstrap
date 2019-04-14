@@ -9,7 +9,7 @@
             <h1>Create a new ModelFullName</h1>
 
             <p>
-                <a href="{{ route('PluralsKebabDot.index') }}" class="btn btn-primary">Back to PluralFullName</a>
+                <a href="{{ route('PluralsKebabDot.index') }}">Back to PluralFullName</a>
             </p>
 
             {!! BootForm::open(['model' => $ModelCamel, 'route' => 'PluralsKebabDot.store']) !!}
