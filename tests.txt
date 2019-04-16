@@ -5,15 +5,15 @@
 clear \
 && git reset --hard \
 && git clean -fd \
-&& php artisan crud:bootstrap:classic Article -n \
--l "crud-bootstrap-classic::layout-mix" \
+&& php artisan crud:bootstrap4 Article -n \
+-l "crud-bootstrap4::layout-mix" \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
 -c "unsignedInteger views -d 0" \
 -c "boolean active -d 1" \
-&& php artisan crud:bootstrap:classic Article/Comment -n \
--l "crud-bootstrap-classic::layout-mix" \
+&& php artisan crud:bootstrap4 Article/Comment -n \
+-l "crud-bootstrap4::layout-mix" \
 -c "string pseudo" \
 -c "dateTime date -u" \
 -c "text comment" \
@@ -28,15 +28,15 @@ clear \
 clear \
 && git reset --hard \
 && git clean -fd \
-&& php artisan crud:bootstrap:classic Article -n \
--l "crud-bootstrap-classic::layout-cdn" \
+&& php artisan crud:bootstrap4 Article -n \
+-l "crud-bootstrap4::layout-cdn" \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
 -c "unsignedInteger views -d 0" \
 -c "boolean active -d 1" \
-&& php artisan crud:bootstrap:classic Article/Comment -n \
--l "crud-bootstrap-classic::layout-cdn" \
+&& php artisan crud:bootstrap4 Article/Comment -n \
+-l "crud-bootstrap4::layout-cdn" \
 -c "string pseudo" \
 -c "dateTime date -u" \
 -c "text comment" \
@@ -45,25 +45,3 @@ clear \
 && php artisan mi:fr \
 && php artisan db:seed --class=ArticlesTableSeeder \
 && php artisan db:seed --class=ArticleCommentsTableSeeder
-
-# VUE
-
-clear \
-&& git reset --hard \
-&& git clean -fd \
-&& php artisan crud:bootstrap:vue Article -n \
--c "string title" \
--c "enum category foo bar foobar -i" \
--c "text body -n" \
--c "unsignedInteger views -d 0" \
--c "boolean active -d 1" \
-&& php artisan crud:default:classic Article/Comment -n \
--c "string pseudo" \
--c "dateTime date -u" \
--c "text comment" \
--c "enum humor happy unhappy -n" \
--c "float note 2 1 -n" \
-&& php artisan mi:fr \
-&& php artisan db:seed --class=ArticlesTableSeeder \
-&& php artisan db:seed --class=ArticleCommentsTableSeeder \
-&& npm run dev

@@ -1,9 +1,9 @@
 <?php
 
-namespace Bgaze\Crud\Themes\Bootstrap;
+namespace Bgaze\Crud\Themes\Bootstrap4;
 
 use Bgaze\Crud\Themes\Classic\Crud as Base;
-use Bgaze\Crud\Themes\Bootstrap\Builders;
+use Bgaze\Crud\Themes\Bootstrap4\Builders;
 
 /**
  * The core class of the theme
@@ -18,7 +18,16 @@ class Crud extends Base {
      * @return string
      */
     static public function name() {
-        return 'bootstrap:classic';
+        return 'crud:bootstrap4';
+    }
+
+    /**
+     * The description the CRUD theme.
+     * 
+     * @return string
+     */
+    static public function description() {
+        return 'Generate a classic CRUD using Bootstrap 4 theme: <fg=cyan>migration, model, factory, seeder, request, resource, controller, views, routes</>';
     }
 
     /**
@@ -29,7 +38,7 @@ class Crud extends Base {
      * @return string
      */
     static public function layout() {
-        return static::views() . '::layout-cdn';
+        return static::viewsNamespace() . '::layout-cdn';
     }
 
     /**
