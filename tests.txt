@@ -5,14 +5,14 @@
 clear \
 && git reset --hard \
 && git clean -fd \
-&& php artisan crud:bootstrap4 Article -n \
+&& php artisan crud:bootstrap4 Article -t -s -n \
 -l "crud-bootstrap4::layout-mix" \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
 -c "unsignedInteger views -d 0" \
 -c "boolean active -d 1" \
-&& php artisan crud:bootstrap4 Article/Comment -n \
+&& php artisan crud:bootstrap4 Article/Comment -t -s -n \
 -l "crud-bootstrap4::layout-mix" \
 -c "string pseudo" \
 -c "dateTime date -u" \
@@ -28,14 +28,14 @@ clear \
 clear \
 && git reset --hard \
 && git clean -fd \
-&& php artisan crud:bootstrap4 Article -n \
+&& php artisan crud:bootstrap4 Article -t -s -n \
 -l "crud-bootstrap4::layout-cdn" \
 -c "string title" \
 -c "enum category foo bar foobar -i" \
 -c "text body -n" \
 -c "unsignedInteger views -d 0" \
 -c "boolean active -d 1" \
-&& php artisan crud:bootstrap4 Article/Comment -n \
+&& php artisan crud:bootstrap4 Article/Comment -t -s -n \
 -l "crud-bootstrap4::layout-cdn" \
 -c "string pseudo" \
 -c "dateTime date -u" \

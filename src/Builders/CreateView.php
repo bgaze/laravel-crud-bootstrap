@@ -3,7 +3,7 @@
 namespace Bgaze\Crud\Themes\Bootstrap4\Builders;
 
 use Bgaze\Crud\Themes\Classic\Builders\CreateView as Base;
-use Bgaze\Crud\Core\Field;
+use Bgaze\Crud\Core\Entry;
 
 /**
  * The Create view builder.
@@ -13,51 +13,51 @@ use Bgaze\Crud\Core\Field;
 class CreateView extends Base {
 
     /**
-     * Get the default template for a field.
+     * Get the default template for a entry.
      * 
-     * @param Bgaze\Crud\Core\Field $field The field 
-     * @return string The template for the field
+     * @param Bgaze\Crud\Core\Entry $entry The entry 
+     * @return string The template for the entry
      */
-    public function defaultTemplate(Field $field) {
-        return "{!! BootForm::text('FieldName') !!}";
+    public function defaultTemplate(Entry $entry) {
+        return "{!! BootForm::text('EntryName') !!}";
     }
 
     /**
-     * Get the template for a boolean field.
+     * Get the template for a boolean entry.
      * 
-     * @param Bgaze\Crud\Core\Field $field The field 
-     * @return string The template for the field
+     * @param Bgaze\Crud\Core\Entry $entry The entry 
+     * @return string The template for the entry
      */
-    public function booleanTemplate(Field $field) {
-        return "{!! BootForm::radios('FieldName', 'FieldLabel', [0 => 'No', 1 => 'Yes']) !!}";
+    public function booleanTemplate(Entry $entry) {
+        return "{!! BootForm::radios('EntryName', 'EntryLabel', [0 => 'No', 1 => 'Yes']) !!}";
     }
 
     /**
-     * Get the template for a enum field.
+     * Get the template for a enum entry.
      * 
-     * @param Bgaze\Crud\Core\Field $field The field 
-     * @return string The template for the field
+     * @param Bgaze\Crud\Core\Entry $entry The entry 
+     * @return string The template for the entry
      */
-    public function enumTemplate(Field $field) {
-        $choices = $field->input()->getArgument('allowed');
+    public function enumTemplate(Entry $entry) {
+        $choices = $entry->input()->getArgument('allowed');
 
-        if ($field->input()->getOption('nullable')) {
+        if ($entry->input()->getOption('nullable')) {
             array_unshift($choices, '');
         }
 
         $value = $this->compileArrayForPhp(array_combine($choices, $choices), true);
 
-        return sprintf("{!! BootForm::select('FieldName', 'FieldLabel', %s) !!}", $value);
+        return sprintf("{!! BootForm::select('EntryName', 'EntryLabel', %s) !!}", $value);
     }
 
     /**
-     * Get the template for a text field.
+     * Get the template for a text entry.
      * 
-     * @param Bgaze\Crud\Core\Field $field The field 
-     * @return string The template for the field
+     * @param Bgaze\Crud\Core\Entry $entry The entry 
+     * @return string The template for the entry
      */
-    public function textTemplate(Field $field) {
-        return "{!! BootForm::textarea('FieldName') !!}";
+    public function textTemplate(Entry $entry) {
+        return "{!! BootForm::textarea('EntryName') !!}";
     }
 
 }
