@@ -3,7 +3,7 @@
 namespace Bgaze\Crud\Themes\Bootstrap4;
 
 use Bgaze\Crud\Themes\Classic\Crud as Base;
-use Bgaze\Crud\Themes\Bootstrap4\Builders;
+use Bgaze\Crud\Themes\Bootstrap4\Compilers;
 
 /**
  * The core class of the theme
@@ -60,14 +60,13 @@ class Crud extends Base {
     }
 
     /**
-     * The builders availables in the CRUD theme.
+     * The compilers availables in the CRUD theme.
      * 
      * @return array Name as key, full class name as value.
      */
-    static public function builders() {
-        return array_merge(parent::builders(), [
-            'create-view' => Builders\CreateView::class,
-            'edit-view' => Builders\EditView::class,
+    static public function compilers() {
+        return array_merge(parent::compilers(), [
+            'form-content' => Compilers\FormContent::class,
         ]);
     }
 

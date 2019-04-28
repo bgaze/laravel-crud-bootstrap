@@ -3,7 +3,7 @@
 namespace Bgaze\Crud\Themes\Bootstrap4;
 
 use Illuminate\Support\ServiceProvider as Base;
-use Bgaze\Crud\Support\ThemeProviderTrait;
+use Bgaze\Crud\Core\ThemeProviderTrait;
 use Bgaze\Crud\Themes\Bootstrap4\Crud;
 
 /**
