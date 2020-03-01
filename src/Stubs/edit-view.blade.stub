@@ -1,0 +1,24 @@
+@extends('ViewsLayout')
+
+@section('title')
+    ModelFullName #{{ $ModelCamel->id }} - Edit
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Edit ModelFullName #{{ $ModelCamel->id }}</h1>
+
+                <p>
+                    <a href="{{ route('PluralsKebabDot.index') }}">Back to PluralFullName</a>
+                </p>
+
+                @open(['model' => $ModelCamel, 'update' => 'PluralsKebabDot.update'])
+                    #CONTENT
+                    @submit('Save')
+                @close
+            </div>
+        </div>
+    </div>
+@endsection

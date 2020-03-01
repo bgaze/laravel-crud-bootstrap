@@ -1,0 +1,21 @@
+@extends('ViewsLayout')
+
+@section('title', 'ModelFullName #' . $ModelCamel->id)
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>ModelFullName #{{ $ModelCamel->id }}</h1>
+
+                <p><a href="{{ route('PluralsKebabDot.index') }}">Back to PluralFullName</a></p>
+
+                #CONTENT
+                @open(['model' => $ModelCamel, 'route' => ['PluralsKebabDot.destroy', $ModelCamel->id], 'method' => 'delete', 'onsubmit' => 'return confirm(\'Do you really want to delete ModelFullName #' . $ModelCamel->id . '?\');'])
+                    @link(route('PluralsKebabDot.edit', ['ModelCamel' => $ModelCamel->id]), 'Edit', 'primary btn-sm')
+                    @submit('Delete', 'danger btn-sm')
+                @close
+            </div>
+        </div>
+    </div>
+@endsection

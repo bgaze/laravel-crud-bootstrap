@@ -1,8 +1,8 @@
 {
-    "name": "bgaze/laravel-crud-bootstrap4",
+    "name": "bgaze/laravel-crud-bootstrap",
     "description": "A Bootstrap 4 theme for bgaze/laravel-crud",
     "require": {
-        "realripley00/bootstrap-4-form": "~1",
+        "bgaze/bootstrap-form": "~1",
         "bgaze/laravel-crud": "~1"
     },
     "license": "MIT",
@@ -15,13 +15,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bgaze\\Crud\\Themes\\Bootstrap4\\ServiceProvider"
+                "Bgaze\\Crud\\Themes\\Bootstrap\\ServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Bgaze\\Crud\\Themes\\Bootstrap4\\": "src"
+            "Bgaze\\Crud\\Themes\\Bootstrap\\": "src"
         }
     }
 }
