@@ -3,7 +3,7 @@
     "description": "A Bootstrap 4 theme for bgaze/laravel-crud",
     "require": {
         "bgaze/bootstrap-form": "~1",
-        "bgaze/laravel-crud": "~1"
+        "bgaze/laravel-crud": "2.x-dev"
     },
     "license": "MIT",
     "authors": [

@@ -2,7 +2,7 @@
 
 namespace Bgaze\Crud\Themes\Bootstrap;
 
-use Bgaze\Crud\Support\Utils\BladeFormatter;
+use Bgaze\BladeIndenter\BladeIndenter;
 use Illuminate\Support\ServiceProvider as Base;
 
 /**
@@ -28,7 +28,7 @@ class ServiceProvider extends Base
         $this->publishes([__DIR__ . '/Views' => resource_path('views/vendor/crud-bootstrap')], 'crud-bootstrap-views');
 
         // Register bootstrap form blade directive to Blade formatter
-        resolve(BladeFormatter::class)
+        resolve(BladeIndenter::class)
             ->addClosingDirectives([
                 'open' => 'close',
                 'vertical' => 'close',
