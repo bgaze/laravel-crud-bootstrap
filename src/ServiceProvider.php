@@ -27,7 +27,7 @@ class ServiceProvider extends Base
         $this->loadViewsFrom(__DIR__ . '/Views', 'crud-bootstrap');
         $this->publishes([__DIR__ . '/Views' => resource_path('views/vendor/crud-bootstrap')], 'crud-bootstrap-views');
 
-        // Register bootstrap form blade directive to Blade formatter
+        // Configure BladeIndenter for bootstrap form blade directive.
         resolve(BladeIndenter::class)
             ->addClosingDirectives([
                 'open' => 'close',
