@@ -82,6 +82,24 @@ class FormContent extends BaseCompiler
 
 
     /**
+     * Get the form group for a set entry.
+     *
+     * @param  Entry  $entry  The entry
+     * @return string|array The form group for the entry
+     * @throws Exception
+     */
+    public function set(Entry $entry)
+    {
+        $choices = array_combine($entry->argument('allowed'), $entry->argument('allowed'));
+
+        $choices = Helpers::compileArrayForPhp($choices, true);
+
+        $stub = sprintf("@select('EntryName[]', 'EntryLabel', %s, null, ['multiple' => true])", $choices);
+
+        return $this->formGroup($entry, $stub);
+    }
+
+    /**
      * Get the form group for a text entry.
      *
      * @param  Entry  $entry  The entry
